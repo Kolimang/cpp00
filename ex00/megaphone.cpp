@@ -6,7 +6,7 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:29:39 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/08 14:35:40 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/08 14:37:56 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	main(int argc, char *argv[])
 	std::cout << std::endl;
 	return (0);
 }
- 
