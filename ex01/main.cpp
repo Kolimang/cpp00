@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:29:39 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/08 14:35:40 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/11 15:46:54 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
+#include <iomanip>
+#include <string>
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
 
 int	main(int argc, char *argv[])
 {
-	int	i;
-	int	j;
+	PhoneBook	aPhoneBook;
+	Contact		contacts[8];
 
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			std::cout << (char) std::toupper(argv[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
+	(void)argc;
+	(void)argv;
+	std::string someString("Hello World!");
+	std::cout << someString << std::endl;
 	return (0);
 }
- 

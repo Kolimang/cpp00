@@ -6,44 +6,38 @@
 #    By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/08 13:11:17 by jrichir           #+#    #+#              #
-#    Updated: 2025/04/08 14:54:00 by jrichir          ###   ########.fr        #
+#    Updated: 2025/04/11 15:37:53 by jrichir          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS =	$(NAME).cpp
+SRC = 	main.cpp \
+		PhoneBook.class.cpp \
+		Contact.class.cpp
 
-HEADERS = Contact.hpp PhoneBook.hpp
-
-OBJECTS = $(SRCS:%.cpp=%.o)
-
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+OBJ_PATH = obj/
+OBJ = $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
 
 CC = c++
 
-RM = rm -f
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	@printf "\033[K\033[0;34mObject files compiled.\033[0m\n"
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-	@$(CC) $(CFLAGS) ${OBJECTS} -I ${HEADERS} -o ${NAME}
-	@printf "\033[0;32mThe binary '$(NAME)' is ready.\033[0m\n"
-
-.cpp.o:
-	@$(CC) $(CFLAGS) -c $< -o ${<:.cpp=.o}
-	@printf "\033[K\033[0;35mCompiling the object files... : \033[0;33m%s\r" "$<"
+$(OBJ_PATH)%.o: %.cpp
+	@mkdir -p $(OBJ_PATH)
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJECTS) $(OBJ_BNS)
-	@printf "\033[0;31mAll objects files removed.\033[0m\n"
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	@$(RM) $(NAME) $(NAME_BONUS)
-	@printf "\033[0;31mBinary destroyed.\n\033[0m"
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
