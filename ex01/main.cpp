@@ -6,7 +6,7 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:29:39 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/14 12:17:40 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/14 13:52:50 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
 	PhoneBook	myPhoneBook;
 	std::string	command;
 
-	(void)argc;
-	(void)argv;
-
 	while (1)
 	{
-
+		std::cin.clear();
 		std::cout << "Type a command (ADD / SEARCH / EXIT) : ";
 		std::cin >> command;
 		if (command == "ADD")
@@ -35,5 +32,6 @@ int	main(int argc, char *argv[])
 			myPhoneBook.Search();
 		else if (command == "EXIT")
 			return (0);
+		//command = "";
 	}
 }

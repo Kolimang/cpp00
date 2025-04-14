@@ -6,7 +6,7 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:22:31 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/14 11:41:15 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/14 14:07:23 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Contact
 
 	public:
 	void			Print(void);
+	std::string		Crop(std::string str, unsigned int limit);
 	std::string		Get_first_name(void);
 	std::string		Get_last_name(void);
 	std::string		Get_nickname(void);
