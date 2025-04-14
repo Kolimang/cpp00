@@ -6,7 +6,7 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:29:39 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/13 22:24:58 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:17:40 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 
 int	main(int argc, char *argv[])
 {
-	PhoneBook	aPhoneBook;
-	Contact		contacts[8];
+	PhoneBook	myPhoneBook;
 	std::string	command;
 
 	(void)argc;
@@ -31,9 +30,9 @@ int	main(int argc, char *argv[])
 		std::cout << "Type a command (ADD / SEARCH / EXIT) : ";
 		std::cin >> command;
 		if (command == "ADD")
-			aPhoneBook.Add();
+			myPhoneBook.Add();
 		else if (command == "SEARCH")
-			aPhoneBook.Search();
+			myPhoneBook.Search();
 		else if (command == "EXIT")
 			return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:22:31 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/13 21:43:18 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:58:20 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 class	PhoneBook
 {
 	Contact	contacts[8];
-	
+	int		last_index;
+	int		saved_contacts;
+
 	public:
 	PhoneBook(void);
 	void	Add();
 	void	Search();
-	void	Exit();
 };
 
 #endif
