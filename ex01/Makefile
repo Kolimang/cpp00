@@ -6,7 +6,7 @@
 #    By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/08 13:11:17 by jrichir           #+#    #+#              #
-#    Updated: 2025/04/11 15:37:53 by jrichir          ###   ########.fr        #
+#    Updated: 2025/04/15 16:41:29 by jrichir          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,16 +21,16 @@ OBJ = $(addprefix $(OBJ_PATH), $(SRC:.cpp=.o))
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ_PATH)%.o: %.cpp
 	@mkdir -p $(OBJ_PATH)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_PATH)
