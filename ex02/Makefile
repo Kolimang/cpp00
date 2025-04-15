@@ -6,11 +6,11 @@
 #    By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/08 13:11:17 by jrichir           #+#    #+#              #
-#    Updated: 2025/04/08 14:31:05 by jrichir          ###   ########.fr        #
+#    Updated: 2025/04/15 16:57:18 by jrichir          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = account
 
 SRCS =	$(NAME).cpp
 
