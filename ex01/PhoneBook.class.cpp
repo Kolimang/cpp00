@@ -6,15 +6,11 @@
 /*   By: jrichir <jrichir@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:29:39 by jrichir           #+#    #+#             */
-/*   Updated: 2025/04/15 16:39:24 by jrichir          ###   ########.fr       */
+/*   Updated: 2025/04/16 14:52:59 by jrichir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
 #include "PhoneBook.class.hpp"
-#include "Contact.class.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -25,6 +21,7 @@ PhoneBook::PhoneBook(void)
 void	PhoneBook::Add(void) 
 {
 	int 		i;
+	bool		invalid;
 	std::string	input_data;
 
 	i = last_index;
@@ -34,15 +31,20 @@ void	PhoneBook::Add(void)
 			exit(1) ;
 		input_data = contacts[i].Trim_from_right(input_data);
 		contacts[i].Set_first_name(input_data);
-	} 	while (contacts[i].Get_first_name() == "");
+		invalid = contacts[i].Check_valid_name(contacts[i].Get_first_name(), 23);
+		if (invalid)
+			std::cout << "Invalid input. Please re-enter valid input." << std::endl;
+	} 	while (contacts[i].Get_first_name() == "" || invalid);
 	do {
 		std::cout << "Enter last name : ";
 		if (!std::getline(std::cin >> std::ws, input_data))
 			exit(1) ;
 		input_data = contacts[i].Trim_from_right(input_data);
 		contacts[i].Set_last_name(input_data);
-
-	} 	while (contacts[i].Get_last_name() == "");
+		invalid = contacts[i].Check_valid_name(contacts[i].Get_last_name(), 34);
+		if (invalid)
+			std::cout << "Invalid input. Please re-enter valid input." << std::endl;
+	} 	while (contacts[i].Get_last_name() == ""  || invalid);
 	do {
 		std::cout << "Enter nickname : ";
 		if (!std::getline(std::cin >> std::ws, input_data))
@@ -56,7 +58,10 @@ void	PhoneBook::Add(void)
 			exit(1) ;
 		input_data = contacts[i].Trim_from_right(input_data);
 		contacts[i].Set_phone_number(input_data);
-	} 	while (contacts[i].Get_phone_number() == "");
+		invalid = contacts[i].Check_valid_phonenumber(contacts[i].Get_phone_number(), 26);
+		if (invalid)
+			std::cout << "Invalid input. Please re-enter valid input." << std::endl;
+	} 	while (contacts[i].Get_phone_number() == ""  || invalid);
 	do {
 		std::cout << "Enter darkest secret : ";
 		if (!std::getline(std::cin >> std::ws, input_data))
